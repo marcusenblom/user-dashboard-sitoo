@@ -1,8 +1,113 @@
-$mainColorDark: #448F67;
-$mainColorLight: #43c881;
+$mainColorRed: #DF5151;
+$mainColorYellow: #E49B42;
+$mainColorGreen: #63B197;
+$mainColorBlue: #35779D;
+$mainColorPurple: #A85A8E;
 
 // Style
 $borderLight: #d3d3d3;
 $boxShadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
 $boxShadowDark: 0px 2px 4px rgba(0, 0, 0, 0.25);
 $boxShadowLight: 0px 2px 4px rgba(126, 126, 126, 0.12);
+
+
+
+// Keyframes
+
+// Fade in content quickly
+$fadeInContent: fadeInContent 0.4s normal ease-in-out;
+// Fade in content slowly
+$fadeInContentSemiSlow: fadeInContent 0.6s normal ease-in-out;
+// Fade in content even more slowly
+$fadeInContentSlow: fadeInContent 1.5s normal ease-in-out;
+// Fade in content crazy slowly
+$fadeInContentExtraSlow: fadeInContent 2s normal ease-in-out;
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+// Fade in content from right
+$fadeInContentFromRight: fadeInContentFromRight 0.6s normal ease-in-out;
+$fadeInContentFromRightSlow: fadeInContentFromRight 1s normal ease-in-out;
+$fadeInContentFromRightExtraSlow: fadeInContentFromRight 1.8s normal ease-in-out;
+@keyframes fadeInContentFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+// Fade in content from left
+$fadeInContentFromLeft: fadeInContentFromLeft 0.6s normal ease-in-out;
+$fadeInContentFromLeftSlow: fadeInContentFromLeft 1s normal ease-in-out;
+$fadeInContentFromLeftExtraSlow: fadeInContentFromLeft 1.8s normal ease-in-out;
+@keyframes fadeInContentFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+// Fade in content from bottom
+$fadeInContentFromBottom: fadeInContentFromBottom 0.6s normal ease-in-out;
+$fadeInContentFromBottomSlow: fadeInContentFromBottom 1s normal ease-in-out;
+$fadeInContentFromBottomExtraSlow: fadeInContentFromBottom 1.8s normal
+  ease-in-out;
+@keyframes fadeInContentFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+// Fade in content from top
+$fadeInContentFromTop: fadeInContentFromTop 0.6s normal ease-in-out;
+$fadeInContentFromTopSlow: fadeInContentFromTop 1s normal ease-in-out;
+$fadeInContentFromTopExtraSlow: fadeInContentFromTop 1.8s normal ease-in-out;
+@keyframes fadeInContentFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+$skeletonPulsate: skeletonPulsate 1.5s infinite;
+@keyframes skeletonPulsate{
+  0% {
+      opacity: 1;
+  }
+  
+  50% {
+      opacity: 0.5;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}

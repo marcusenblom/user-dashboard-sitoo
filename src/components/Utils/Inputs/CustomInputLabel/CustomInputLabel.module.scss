@@ -1,0 +1,27 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+    .tooltipContainer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    
+        label {
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 17px;
+            color: black;
+        }
+        .required{
+            margin-left: 2px;
+            line-height: 1px;
+            font-size: 26px;
+            margin-top: 8px;
+        }
+    }
+}

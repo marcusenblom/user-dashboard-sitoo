@@ -6,4 +6,44 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
+
+	*{
+		box-sizing: border-box;
+	}
 }
+
+//Forms & fields
+textarea, textarea.textAreaInputWhite {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    // font-family: $mainFontRegular;
+    color: #000000;
+    
+    // &::placeholder {
+    //   font-family: $mainFontRegular;
+    // }
+  }
+  
+  .textInputWhite {
+    background: #ffffff;
+    border: 1px solid #B9B9B9;
+    border-radius: 8px;
+    height: 50px;
+    padding: 0 15px;
+    width: 100%;
+    // font-family: $mainFontRegular;
+  }
+  
+  .selectInputWhite {
+    // font-family: $mainFontRegular;
+    border-radius: 8px;
+    background: #ffffff;
+  }
+  
+  .textareaInputWhite {
+    // font-family: $mainFontRegular;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #B9B9B9;
+  }

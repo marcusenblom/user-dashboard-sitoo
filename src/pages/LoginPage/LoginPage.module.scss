@@ -1,0 +1,100 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.wrapper{
+    height: 100vh;
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .loginWrapper{
+        width: 100%;
+        max-width: 500px;
+        padding: 42px;
+        background-color: white;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .topBar{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 12px;
+
+            .logoContainer{
+                width: 140px;
+                margin-bottom: 26px;
+
+                img{
+                    width: 100%;
+                }
+            }
+
+            .headerContainer{
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+
+                .header{
+                    margin: 0;
+                    font-size: 22px;
+                    font-weight: 800;
+                }
+            }
+        }
+
+        .form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .inputWrapper{
+                margin-bottom: 20px;
+                width: 100%;
+
+                input{
+                    background-color: rgb(223, 223, 223);
+                }
+            }
+
+            .buttonContainer{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+
+                .mainButton{
+                    @include mainButton;
+                    min-width: 220px;
+                    position: relative;
+
+                    .loader{
+                        position: absolute;
+                        height: 20px;
+                        width: 20px;
+                        top: 50%;
+                        right: 16px;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+
+        @include xs{
+            padding: 22px;
+            width: 100%;
+            border-radius: 0;
+            background-color: transparent;
+            box-shadow: unset;
+
+            .topBar, .form{
+                width: 100%;
+            }
+        }
+    }
+}
