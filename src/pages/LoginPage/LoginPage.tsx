@@ -2,7 +2,7 @@ import { useState } from 'react';
 import CustomTextInput from '../../components/Utils/Inputs/CustomTextInput/CustomTextInput';
 import styles from './LoginPage.module.scss';
 import { useNavigate } from 'react-router-dom';
-import routes from '../../routes';
+import routes from '../../routes/routes';
 
 export default function LoginPage(){
 	const navigate = useNavigate();
@@ -24,17 +24,13 @@ export default function LoginPage(){
 						<div className={styles.logoContainer}>
 							<img src="/img/logos/logo_transparent.png" alt="" />
 						</div>
-
-						{/* <div className={styles.headerContainer}>
-							<h2 className={styles.header}>Log in</h2>
-						</div> */}
 					</div>
 
 					<form className={styles.form} onSubmit={login}>
 
 						<div className={styles.inputWrapper}>
 							<CustomTextInput
-								inputLabel="User name"
+								inputLabel="Username"
 								type="text"
 								value={formData?.username}
 								placeholder="User name"
