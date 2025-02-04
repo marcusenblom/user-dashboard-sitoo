@@ -1,0 +1,11 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.wrapper{
+    width: 100%;
+    padding: 22px;
+
+    @include md{
+        padding: 11px;
+    }
+}

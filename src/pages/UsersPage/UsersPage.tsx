@@ -4,6 +4,7 @@ import { User } from '../../types/user';
 import { useNavigate } from "react-router-dom";
 import { getQueryParam } from '../../utils/helperFunctions';
 import { useEffect, useState } from "react";
+import PageWrapper from '../../layouts/PageWrapper/PageWrapper';
 
 export default function UsersPage(){
 	const navigate = useNavigate();
@@ -41,26 +42,28 @@ export default function UsersPage(){
 	}
 
 	return (
-		<section className={styles.wrapper}>
-			{isLoading ? "Loading..."
-			:
-			error ? "ERROR LOADING USERS"
-			:
-			usersData?.items?.length > 0 ?
-			<ul>
-				{usersData?.items?.map((user: User, index: number) => {
-					return(
-						<li key={index}>{user?.namefirst} {user?.namelast}</li>
-					)
-				})}
-			</ul>
-			:
-			"No users found"
-			}
+		<PageWrapper>
+			<div className={styles.wrapper}>
+				{isLoading ? "Loading..."
+				:
+				error ? "ERROR LOADING USERS"
+				:
+				usersData?.items?.length > 0 ?
+				<ul>
+					{usersData?.items?.map((user: User, index: number) => {
+						return(
+							<li key={index}>{user?.namefirst} {user?.namelast}</li>
+						)
+					})}
+				</ul>
+				:
+				"No users found"
+				}
 
-			<button onClick={()=>{changePage(false)}}>Previous</button>
-			<button onClick={()=>{changePage(true)}}>Next</button>
-		</section>
+				<button onClick={()=>{changePage(false)}}>Previous</button>
+				<button onClick={()=>{changePage(true)}}>Next</button>
+			</div>
+		</PageWrapper>
 	);
 	
 };

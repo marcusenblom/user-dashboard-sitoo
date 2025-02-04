@@ -1,0 +1,38 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: $contentBackgroundColor;
+
+    .topNav{
+        width: 100%;
+        height: $topNavHeight;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+    }
+
+    .nav{
+        width: $navWidth;
+        padding-top: $topNavHeight;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: white;
+        z-index: 2;
+    }
+
+    .content{
+        position: relative;
+        flex-grow: 1;
+        margin-left: $navWidth;
+        margin-top: $topNavHeight;
+    }
+}

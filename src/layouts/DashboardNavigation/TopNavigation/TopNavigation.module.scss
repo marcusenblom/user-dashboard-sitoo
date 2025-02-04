@@ -1,0 +1,41 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+$sidePadding: 16px;
+
+.topBar{
+    height: $topNavHeight;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+
+    .left{
+        width: $navWidth;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $sidePadding;
+
+        .logoWrapper{
+            width: 100%;
+            max-width: 100px;
+            
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+    .center{
+        flex-grow: 1;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+    }
+}

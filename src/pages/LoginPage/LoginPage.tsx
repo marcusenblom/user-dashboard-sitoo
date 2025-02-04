@@ -4,15 +4,19 @@ import styles from './LoginPage.module.scss';
 import { useNavigate } from 'react-router-dom';
 import routes from '../../routes/routes';
 
+// Page to visualize a log in flow with routing
+// Hard-coded account information
+
 export default function LoginPage(){
 	const navigate = useNavigate();
 	const [formData] = useState({
-		username: "USERNAME",
+		username: "MARCUS_ENBLOM",
 		password: "PASSWORD"
 	});
 
-	function login(){
-		navigate(routes.users);
+	function login(event: React.FormEvent){
+		event.preventDefault();
+		navigate(routes.users.path);
 	}
 
 	return (
