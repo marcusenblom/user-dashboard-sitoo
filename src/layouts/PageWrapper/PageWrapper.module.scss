@@ -3,9 +3,10 @@
 
 .wrapper{
     width: 100%;
-    padding: 22px;
+    @include pagePadding;
 
-    @include md{
-        padding: 11px;
+    &.noSidePadding{
+        padding-left: 0!important;
+        padding-right: 0!important;
     }
 }

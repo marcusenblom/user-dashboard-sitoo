@@ -1,0 +1,47 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: #54636b8f;
+    gap: 8px;
+}
+
+/* Hide default checkbox */
+.customCheckbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Custom checkbox */
+.checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+
+    &.checked{
+        background-color: $mainColorBlue;
+        position: relative;
+
+        &::after{
+            content: "";
+            width: 11px;
+            height: 6px;
+            border-bottom: 2px solid white;
+            border-left: 2px solid white;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 5px;
+            left: 4px;
+        }
+    }
+}

@@ -1,6 +1,19 @@
 @use '@styles/variables' as *;
 @use '@styles/mixins' as *;
 
-.wrapper{
-    min-height: 2000px;
+.usersWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .pagination{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 12px;
+        max-width: 1000px;
+
+        @include pageSidePadding;
+    }
 }

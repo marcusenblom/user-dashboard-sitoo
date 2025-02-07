@@ -44,7 +44,22 @@
 }
 
 
+// Page padding
+@mixin pagePadding {
+    padding: 22px;
 
+    @include md{
+        padding: 11px;
+    }
+}
+
+@mixin pageSidePadding {
+    padding: 0 22px;
+
+    @include md{
+        padding: 0 11px;
+    }
+}
 
 
 // Flex

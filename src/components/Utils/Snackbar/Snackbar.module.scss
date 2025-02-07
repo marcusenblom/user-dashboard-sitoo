@@ -1,0 +1,61 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.snackbar{
+    padding: 24px;
+    border-radius: 6px;
+    background: white;
+    width: 500px;
+    max-width: 90vw;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: $boxShadow;
+    opacity: 1;
+    visibility: hidden;
+    // transition: all 0.3s ease-in-out;
+    z-index: 9999;
+    animation: fadeInContentFromBottom 0.3s ease-in-out;
+
+    &.show{
+        visibility: visible;
+        // opacity: 1;
+    }
+    .textContainer{
+        text-align: center;
+        p{
+            font-weight: 500;
+            font-size: 14px;
+            margin: 0;
+            color: $mainColorBlue;
+        }
+    }
+
+    &.error{
+        background: $mainColorRed;
+        p{
+            color: white;
+        }
+    }
+
+    &.success{
+        background: $mainColorGreen;
+        p{
+            color: white;
+        }
+    }
+
+}
+
+@keyframes fadeInContentFromBottom {
+    from {
+      opacity: 0;
+      transform: translate(-50%, 100%);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate(-50%, 20px);
+    }
+}

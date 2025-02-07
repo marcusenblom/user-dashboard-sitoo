@@ -1,0 +1,41 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.inner{
+    width: 100%;
+    padding: 12px 22px 26px 22px;
+
+    .disclaimer{
+        width: 100%;
+        text-align: center;
+        margin: 0 0 26px 0;
+        color: red;
+        font-weight: 500;
+    }
+
+    .buttonContainer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .mainButton{
+            @include mainButton;
+            @include buttonStyleRed; 
+            min-width: 220px;
+            position: relative;
+
+            .loader{
+                position: absolute;
+                height: 20px;
+                width: 20px;
+                top: 50%;
+                right: 16px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    @include md{
+        padding: 11px;
+    }
+}

@@ -1,0 +1,58 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+
+    .page{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        width: 36px;
+        margin: 0 0 8px 0;
+        background: white;
+        border: 1px solid rgb(206, 206, 255);
+        box-shadow: none;
+        transition: all 0.2s ease-in-out;
+        border-radius: 0px;
+        cursor: pointer;
+
+        &:nth-child(1){
+            border-left: 2px solid rgb(206, 206, 255);
+        }
+        &:nth-last-child(1){
+            border-right: 2px solid rgb(206, 206, 255);
+
+        }
+
+        &:hover{
+            
+        }
+
+        .number{
+            font-weight: 500;
+            font-size: 14px;
+            margin: 0;
+            color: $mainColorBlue;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &.active{
+            box-shadow: $boxShadowLight;
+            border: 2px solid $mainColorBlue;
+            background: white;
+            cursor: default;
+
+            .number{
+                color: $mainColorBlue;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    &.show{
+        display: flex;
+    }
+
+    .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $drawerOverlayColor;
+        opacity: 0.64;
+    }
+
+    .modalWindow{
+        width: 95%;
+        max-width: 885px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        z-index: 9001;
+        max-height: 80vh;
+        border-radius: 8px;
+        
+        .headerContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 32px;
+            width: 100%;
+
+            @include xs{
+                padding: 18px;
+            }
+
+            .header{
+                margin: 0;
+                max-width: 90%;
+                font-size: 30px;
+                line-height: 30px;
+
+                @include sm{
+                    font-size: 18px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
+
+            .closeButton{
+                position: absolute;
+                display: flex;
+                align-items: center;
+                right: 20px;
+                top: 20px;
+                cursor: pointer;
+
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+}

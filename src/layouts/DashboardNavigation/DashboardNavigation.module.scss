@@ -5,7 +5,6 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color: $contentBackgroundColor;
 
     .topNav{
         width: 100%;
@@ -14,25 +13,41 @@
         top: 0;
         left: 0;
         right: 0;
-        z-index: 3;
+        z-index: 2;
+        box-shadow: $boxShadowLight;
     }
 
     .nav{
         width: $navWidth;
-        padding-top: $topNavHeight;
-        height: 100%;
+        height: calc(100%);
         position: fixed;
         top: 0;
         left: 0;
         bottom: 0;
         background-color: white;
-        z-index: 2;
+        z-index: 3;
+        box-shadow: $boxShadowLight;
+        transition: transform 0.3s ease-in-out;
     }
 
     .content{
         position: relative;
-        flex-grow: 1;
-        margin-left: $navWidth;
+        width: 100%;
+        padding-left: $navWidth;
         margin-top: $topNavHeight;
+    }
+
+    @include sm{
+        .nav{
+            transform: translateX(-100%);
+
+            &.show{
+                transform: translateX(0);
+            }
+        }
+        
+        .content{
+            padding-left: 0;
+        }
     }
 }
