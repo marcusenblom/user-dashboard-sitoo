@@ -29,9 +29,7 @@ export default function UsersPage(){
 	// Trigger refetch whenever the 'page' query parameter changes
 	useEffect(() => {
 		refetch();
-	}, [page, refetch]);
-
-	console.log("isFetching: ", isFetching)
+	}, [page, perPage, refetch]);
 
 	useEffect(()=>{
 		updateUsersArray();
@@ -71,6 +69,16 @@ export default function UsersPage(){
 		setPages(pageNumbers);
 	}
 
+	function updatePerPage(newPerPage: string){
+
+		// Preserve existing query params
+		const queryParams = new URLSearchParams(window.location.search);
+		queryParams.set("per_page", newPerPage);
+		queryParams.set("page", "1");
+
+		navigate({ search: queryParams.toString() });
+	}
+
 	return (
 		<PageWrapper noSidePadding={true}>
 			<div className={styles.usersWrapper}>
@@ -87,7 +95,20 @@ export default function UsersPage(){
 					}
 
 				</UsersTable>
-									
+
+
+				<div className={styles.amountPerPageWrapper}>
+					<label htmlFor="perPage">Show:</label>
+					<select
+						id="perPage"
+						value={perPage}
+						onChange={(e)=>updatePerPage(e.target.value)}
+					>
+						<option value="10">10</option>
+						<option value="15">15</option>
+						<option value="20">20</option>
+					</select>
+				</div>			
 
 				<div className={styles.pagination}>
 					<Pagination
